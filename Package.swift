@@ -3,23 +3,26 @@
 
 import PackageDescription
 
+let layoutName = "ListCollectionLayout"
+
 let package = Package(
-    name: "ListCollectionLayout",
+    name: layoutName,
     platforms: [.iOS(.v11)],
     products: [
         .library(
-            name: "ListCollectionLayout",
-            targets: ["ListCollectionLayout"]
+            name: layoutName,
+            targets: [layoutName]
         )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "ListCollectionLayout"
+            name: layoutName
         ),
         .target(
             name: "ListCollectionView",
-            dependencies: ["ListCollectionLayout"]
+            dependencies: ["ListCollectionLayout"],
+            path: "Sources/ListCollectionView"
         )
     ],
     swiftLanguageVersions: [.v5]
